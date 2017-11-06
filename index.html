@@ -1,0 +1,43 @@
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>  
+  
+<body>  
+      
+    <p>Какую страницу желаете открыть?</p>  
+    <form>  
+        <input id="btn1" type="button" value="Страница 1">   
+        <input id="btn2" type="button" value="Страница 2">  
+    </form>  
+    <div id="content"></div>  
+      
+    <script>  
+        $(document).ready(function(){  
+          
+            $('#btn1').click(function(){  
+                $.ajax({  
+                    url: "lend2/index.html",  
+                    cache: false,  
+                    success: function(html){  
+                        $("#content").html(html);  
+                    }  
+                });  
+            });  
+              
+            $('#btn2').click(function(){  
+                $.ajax({  
+                    url: "lend1/index.html",  
+                    cache: false,  
+                    success: function(html){  
+                        $("#content").html(html);  
+                    }  
+                });  
+            });  
+              
+        });  
+    </script>  
+      
+</body>  
+</html>
